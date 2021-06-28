@@ -1,0 +1,33 @@
+{
+  "name": "drm-vid",
+  "version": "1.0.0",
+  "description": "App use electron to watch video attached DRM",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron src/main.js ",
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pham-Xuan-Thanh/Vid_DRM.git"
+  },
+  "keywords": [
+    "DRM",
+    "electron",
+    "vid"
+  ],
+  "author": "PXT Xeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pham-Xuan-Thanh/Vid_DRM/issues"
+  },
+  "homepage": "https://github.com/Pham-Xuan-Thanh/Vid_DRM#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "electron": "^13.1.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  }
+}
