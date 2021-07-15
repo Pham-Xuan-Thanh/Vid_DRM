@@ -1,0 +1,90 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../dash.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.js"></script>
+    <script >
+        function init() {
+    const protData = {
+        "org.w3.clearkey": {
+            // "clearkeys": {
+            //     "oW5AK5BW43HzbTSKpiu3SQ": "hyN9IKGfWKdAwFaE5pm0qg"
+            // }
+            "serverURL": "https://demo.edge247.xyz/api/v1/drm/key"
+        }
+    };
+    
+    var video,
+        player,
+        //url = "C:/Users/pxtha/OneDrive/Desktop/App Electron/cam_17_2021_6_21_17_17_50/stream.mpd";
+        url = "https://demo.edge247.xyz/playback/box_number_2/35/dash/cam_35_2021_6_23_9_5_7/stream.mpd";
+    video = document.querySelector("video");
+    player = dashjs.MediaPlayer().create();
+    player.initialize(video, url, true);
+    player.setProtectionData(protData);
+}
+    </script>
+   
+</head>
+<body>
+    <script src="index.js"></script>
+<div>
+   
+</div>
+<button type="submit" id="btnSubmit" >Submit</button>
+
+<video controls="true" id="video" autoplay=true width="800" ></video> 
+
+<script>
+    
+   
+    document.getElementById('btnSubmit').addEventListener('click', (event) => {
+        event.preventDefault();
+        var inpFile = document.getElementById('inpfile');
+        var filelist = inpFile.files;
+        if(filelist.length == 1) {
+            ipc.send('file:submit',filelist[0].path);    
+        }
+
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        init();
+    });
+</script>
+</body>
+</html> -->
+<!doctype html>
+<html lang="en">
+ <head>
+ <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- CoreUI CSS -->
+ <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css" crossorigin="anonymous">
+
+ <title>CoreUI</title>
+ </head>
+ <body class="c-app">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Danh sách Thiết bị</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Video quay lại</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Live Camera</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+        
+      </ul>
+
+ <!-- Optional JavaScript -->
+ <!-- Popper.js first, then CoreUI JS -->
+ <script src="https://unpkg.com/@popperjs/core@2"></script>
+ <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+ </body>
+</html>

@@ -1,0 +1,6 @@
+/node_modules
+/.vs_code
+/.git
+/vid.json
+/dist
+/node_modules/electron/dist/electron.exe

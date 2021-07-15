@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./play.js"></script>
+
+    <script src="../../dash.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.js"></script>
+   
+</head>
+<body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            ipc.send('video_load');
+
+            // runVideo();
+        });
+        ipc.on('receive_url', function(event, arg){
+            console.log(arg);
+            runVideo(arg);
+        });
+    </script>
+
+    <video controls="true" id="video" autoplay=true width="800" ></video> 
+
+
+</body>
+</html>

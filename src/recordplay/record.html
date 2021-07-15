@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../ipc/ipc.js"></script>
+ <!-- CoreUI CSS -->
+ <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css" crossorigin="anonymous">
+
+ <title>CoreUI</title>
+ </head>
+ <body class="c-app">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" id="listdev"> Danh sách Thiết bị</a>
+          </li>
+        <li class="nav-item">
+           <a class="nav-link disabled"  id="record" tabindex="-1" aria-disabled="true">Video quay lại</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="livecam">Live Camera</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+        
+      </ul>
+      <div>
+        <form>
+          <input type="file" id="inpfile" accept=".zip">
+          <input type="url" id="urlSV">
+          <!-- onchange="sendINPChange(this.files)" -->
+      </form>
+      <button type="submit" id="btnSubmit" >Submit</button>
+      </div>
+      <script>
+      document.getElementById('listdev').addEventListener('click', (event) => {
+        ipc.send('load:listdev');   
+      });
+      
+      document.getElementById('livecam').addEventListener('click', (event) => {
+        ipc.send('load:livecam');   
+      });
+      document.getElementById('btnSubmit').addEventListener('click', (event) => {
+            event.preventDefault();
+            var inpFile = document.getElementById('inpfile');
+            var urlSV = document.getElementById('urlSV');
+            var filelist = inpFile.files;
+            if(filelist.length == 1) {
+                ipc.send('file:submit', filelist[0].path, urlSV.value);   
+            }
+
+
+        });
+    </script>
+ <!-- Optional JavaScript -->
+ <!-- Popper.js first, then CoreUI JS -->
+ <script src="https://unpkg.com/@popperjs/core@2"></script>
+ <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+ </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="dash.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.js"></script>
+    <script >
+        function init() {
+    const protData = {
+        "org.w3.clearkey": {
+            // "clearkeys": {
+            //     "oW5AK5BW43HzbTSKpiu3SQ": "hyN9IKGfWKdAwFaE5pm0qg"
+            // }
+            "serverURL": "https://demo.edge247.xyz/api/v1/drm/key"
+        }
+    };
+    
+    var video,
+        player,
+        //url = "C:/Users/pxtha/OneDrive/Desktop/App Electron/cam_17_2021_6_21_17_17_50/stream.mpd";
+        url = "https://demo.edge247.xyz/playback/box_number_2/35/dash/cam_35_2021_6_23_9_5_7/stream.mpd";
+    video = document.querySelector("video");
+    player = dashjs.MediaPlayer().create();
+    player.initialize(video, url, true);
+    player.setProtectionData(protData);
+}
+    </script>
+   
+</head>
+<body>
+<div>
+    <input type="file" id="inpfile">
+    <!-- <video controls="true" id="video" autoplay=true width="800" ></video> -->
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        init();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../ipc/ipc.js"></script>
+ <!-- CoreUI CSS -->
+ <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css" crossorigin="anonymous">
+
+ <title>CoreUI</title>
+ </head>
+ <body class="c-app">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link disabled" tabindex="-1" aria-disabled="true" id="listdev">Danh sách Thiết bị</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link active"  id="record">Video quay lại</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="livecam">Live Camera</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+        
+      </ul>
+      <script>
+      document.getElementById('record').addEventListener('click', (event) => {
+        ipc.send('load:record');   
+      });
+      document.getElementById('livecam').addEventListener('click', (event) => {
+        ipc.send('load:livecam');   
+      });
+    </script>
+ <!-- Optional JavaScript -->
+ <!-- Popper.js first, then CoreUI JS -->
+ <script src="https://unpkg.com/@popperjs/core@2"></script>
+ <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+ </body>
+</html>
